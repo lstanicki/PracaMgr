@@ -65,6 +65,12 @@ public class IndexActivity extends Activity {
         }
     }
 
+
+
+
+
+
+
     public void onStartListening(MenuItem item) {
         Log.d(_logTag, "Monitor Location - Start Listening");
 
