@@ -56,7 +56,6 @@ public class IndexActivity extends Activity {
         Criteria criteria = new Criteria();
 
         criteria.setAccuracy(Criteria.POWER_LOW);
-
         LocationManager lm = (LocationManager) getSystemService(LOCATION_SERVICE);
         List<String> matchingProviderNames = lm.getProviders(criteria, false);
         for(String providerName:matchingProviderNames) {
