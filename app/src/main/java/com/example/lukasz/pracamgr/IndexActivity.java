@@ -48,7 +48,21 @@ public class IndexActivity extends Activity {
         for(String providerName:matchingProviderNames) {
             LocationProvider provider = lm.getProvider(providerName);
             String logMessage = LogHelper.formatLocationProvider(this, provider);
-            Log.d(LogHelper._timeStampFormat, logMessage);
+            Log.d(LogHelper._timeStampFormat, "Monitor Location Provider" + logMessage);
+        }
+    }
+
+    public void onLowPowerProvider(MenuItem item) {
+        Criteria criteria = new Criteria();
+
+        criteria.setAccuracy(Criteria.POWER_LOW);
+
+        LocationManager lm = (LocationManager) getSystemService(LOCATION_SERVICE);
+        List<String> matchingProviderNames = lm.getProviders(criteria, false);
+        for(String providerName:matchingProviderNames) {
+            LocationProvider provider = lm.getProvider(providerName);
+            String logMessage = LogHelper.formatLocationProvider(this, provider);
+            Log.d(LogHelper._timeStampFormat, "Monitor Location Provider" + logMessage);
         }
     }
 
